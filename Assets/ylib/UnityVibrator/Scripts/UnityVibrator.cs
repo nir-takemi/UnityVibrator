@@ -6,30 +6,31 @@ namespace ylib
 
     public static class UnityVibrator
     {
-        public static void PlayShort()
+
+        public static void PlayVeryShort()
         {
             Play(1519, 1);
         }
-        public static void PlayVeryShort()
+        public static void PlayShort()
         {
             Play(1521, 20);
         }
         public static void Play()
         {
-            Handheld.Vibrate();
+            Play(1350, 200);
         }
         public static void PlayLong()
         {
-            Play(4095, 200);
+            Play(1351, 500);
         }
         public static void PlayVeryLong()
         {
-            Play(1011, 500);
+            Play(4095, 900);
         }
 
         public static void Play(int soundId, long millisec)
         {
-            if(SystemInfo.supportsVibration)
+            if (SystemInfo.supportsVibration)
             {
 #if !UNITY_EDITOR
 #if UNITY_IOS
@@ -58,9 +59,12 @@ namespace ylib
 
         #region Android
 #if !UNITY_EDITOR && UNITY_ANDROID
-    public static AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-    public static AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-    public static AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
+        public static AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        public static AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+        public static AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");
+
+        // android.permission.VIBRATEを雑に付与するための定義
+        private static void _permission(){ Handheld.Vibrate(); }
 
         public static void Vibrate(long millisec)
         {
