@@ -21,20 +21,24 @@ namespace ylib
         }
         public static void PlayLong()
         {
-            Play(1351, 500);
+            Play(1350, 2, 500);
         }
         public static void PlayVeryLong()
         {
-            Play(4095, 900);
+            Play(1350, 3, 900);
         }
 
         public static void Play(int soundId, long millisec)
+        {
+            Play(soundId, 1, millisec);
+        }
+        public static void Play(int soundId, int loopCount, long millisec)
         {
             if (SystemInfo.supportsVibration)
             {
 #if !UNITY_EDITOR
 #if UNITY_IOS
-            PlaySystemSound(soundId);
+            PlaySystemSound(soundId, loopCount);
 #elif UNITY_ANDROID
             Vibrate(millisec);
 #endif
@@ -45,11 +49,11 @@ namespace ylib
         #region iOS
 #if !UNITY_EDITOR && UNITY_IOS
         [DllImport ("__Internal")]
-        static extern void _playSystemSound(int soundId);
+        static extern void _playSystemSound(int soundId, int loopCount);
 
-        public static void PlaySystemSound(int soundId)
+        public static void PlaySystemSound(int soundId, int loopCount)
         {
-            _playSystemSound(soundId);
+            _playSystemSound(soundId, loopCount);
         }
 
 
