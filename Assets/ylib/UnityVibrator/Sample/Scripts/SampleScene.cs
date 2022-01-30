@@ -7,23 +7,23 @@ namespace ylib.UnityVivrator
     {
         public void PlayVeryShort()
         {
-            ylib.UnityVibrator.PlayVeryShort();
+            ylib.Services.UnityVibrator.PlayVeryShort();
         }
         public void PlayShort()
         {
-            ylib.UnityVibrator.PlayShort();
+            ylib.Services.UnityVibrator.PlayShort();
         }
         public void Play()
         {
-            ylib.UnityVibrator.Play();
+            ylib.Services.UnityVibrator.Play();
         }
         public void PlayLong()
         {
-            ylib.UnityVibrator.PlayLong();
+            ylib.Services.UnityVibrator.PlayLong();
         }
         public void PlayVeryLong()
         {
-            ylib.UnityVibrator.PlayVeryLong();
+            ylib.Services.UnityVibrator.PlayVeryLong();
         }
     }
 }
