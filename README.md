@@ -20,22 +20,21 @@ https://github.com/nir-takemi/UnityVibrator/releases
 3. コード上で以下のように処理を書く
 ```C#
 // 5パターンの定義済のバイブレーションを再生することができます
-ylib.UnityVibrator.PlayVeryShort();
-ylib.UnityVibrator.PlayShort();
-ylib.UnityVibrator.Play();
-ylib.UnityVibrator.PlayLong();
-ylib.UnityVibrator.PlayVeryLong();
+ylib.Services.UnityVibrator.PlayVeryShort();
+ylib.Services.UnityVibrator.PlayShort();
+ylib.Services.UnityVibrator.Play();
+ylib.Services.UnityVibrator.PlayLong();
+ylib.Services.UnityVibrator.PlayVeryLong();
 
 // オリジナルのパターンを利用したい場合は以下のように再生することができません
 // [iOS]SoundId: https://iphonedev.wiki/index.php/AudioServices
 // [Android]millisec: ミリ秒指定
-ylib.UnityVibrator.Play(1000, 500);
+ylib.Services.UnityVibrator.Play(1000, 500);
 ```
 
 # その他
 - オリジナルのパターンを利用したい場合
-  - 以下のアプリでiOSはSoundId、Androidはミリ秒でのパターンを確認することが可能です。
-
-  [<img src="https://d6scj24zvfbbo.cloudfront.net/8dc6156202f015e51f24d5a7837f8ecc/200000005-70bad70bae/200/img_ios.png" height="55">](https://apps.apple.com/us/app/%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E6%8C%AF%E5%8B%95%E7%A2%BA%E8%AA%8D/id1604219797)  [<img src="https://d6scj24zvfbbo.cloudfront.net/8dc6156202f015e51f24d5a7837f8ecc/200000001-200bf200c0/200/img_android.png" height="55">](https://play.google.com/store/apps/details?id=jp.Yasuragitei.VibrationChecker)
+  - 以下のアプリ（シンプル振動確認）でiOSはSoundId、Androidはミリ秒でのパターンを確認することが可能です。  
+  [<img src="https://user-images.githubusercontent.com/10418442/151706245-695fd074-9441-4043-8c07-63bb75cbd11d.png" height="50">](https://apps.apple.com/us/app/%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E6%8C%AF%E5%8B%95%E7%A2%BA%E8%AA%8D/id1604219797)  [<img src="https://user-images.githubusercontent.com/10418442/151706249-a093e904-9e21-49d2-9562-e3f121642e75.png" height="50">](https://play.google.com/store/apps/details?id=jp.Yasuragitei.VibrationChecker)
 
 
