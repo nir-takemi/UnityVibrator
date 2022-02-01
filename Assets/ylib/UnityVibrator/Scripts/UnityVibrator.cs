@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
 
-namespace ylib
+namespace ylib.Services
 {
 
     public static class UnityVibrator
